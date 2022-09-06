@@ -1,5 +1,8 @@
 # Hello_Bank_IBM
-´´´
+
+## Comandos para criar o Banco de Dados
+ 
+````
 create database hellobank;
 use hellobank;
 
@@ -66,4 +69,4 @@ ALTER TABLE hellobank.transaction ADD CONSTRAINT fk_id__type FOREIGN KEY (type) 
 ALTER TABLE hellobank.movement ADD CONSTRAINT fk_id_type_movement FOREIGN KEY (type) REFERENCES hellobank.type_movement(id);
 
 
-´´´
+``````
