@@ -1,4 +1,7 @@
 package com.example.hellobank_ibm.RepositorioDAO;
 
-public interface CustomerDAO {
+import com.example.hellobank_ibm.Model.CustomerModel;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CustomerDAO extends CrudRepository<CustomerModel, Integer> {
 }
