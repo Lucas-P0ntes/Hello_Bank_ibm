@@ -1,8 +1,8 @@
-package com.example.hellobank_ibm.Service;
+package com.example.hellobank_ibm.service;
 
 import java.util.ArrayList;
 
-import com.example.hellobank_ibm.Model.MovementModel;
+import com.example.hellobank_ibm.model.MovementModel;
 
 public interface IMovementService {
 

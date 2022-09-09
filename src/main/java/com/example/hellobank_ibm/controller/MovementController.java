@@ -1,4 +1,4 @@
-package com.example.hellobank_ibm.Controller;
+package com.example.hellobank_ibm.controller;
 
 import java.util.ArrayList;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.hellobank_ibm.Model.MovementModel;
-import com.example.hellobank_ibm.Service.IMovementService;
+import com.example.hellobank_ibm.model.MovementModel;
+import com.example.hellobank_ibm.service.IMovementService;
 
 @RestController
 public class MovementController {

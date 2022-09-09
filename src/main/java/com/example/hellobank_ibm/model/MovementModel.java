@@ -1,4 +1,4 @@
-package com.example.hellobank_ibm.Model;
+package com.example.hellobank_ibm.model;
 
 import java.util.Date;
 
