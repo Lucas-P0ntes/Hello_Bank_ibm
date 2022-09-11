@@ -1,6 +1,6 @@
 package com.example.hellobank_ibm.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +15,12 @@ public class MovementModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private Date hora;
+	private LocalDateTime hora;
 	private Integer valor;
 	private Integer tipo;
-
+	// @ManyToOne
+	// @JoinColumn(name= "id")
+	// private CustomerAccount customerAccount;
 	public Integer getId() {
 		return id;
 	}
@@ -27,11 +29,11 @@ public class MovementModel {
 		this.id = id;
 	}
 
-	public Date getHora() {
+	public LocalDateTime getHora() {
 		return hora;
 	}
 
-	public void setHora(Date hora) {
+	public void setHora(LocalDateTime hora) {
 		this.hora = hora;
 	}
 

@@ -1,4 +1,4 @@
-package com.example.hellobank_ibm.repository;
+package com.example.hellobank_ibm.dao;
 
 public interface CustomerDAO {
 }

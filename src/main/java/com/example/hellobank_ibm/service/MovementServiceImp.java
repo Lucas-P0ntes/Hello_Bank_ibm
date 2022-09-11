@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.hellobank_ibm.dao.MovementDAO;
 import com.example.hellobank_ibm.model.MovementModel;
-import com.example.hellobank_ibm.repository.MovementDAO;
 
 @Service
 public class MovementServiceImp implements IMovementService {
