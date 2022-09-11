@@ -12,52 +12,50 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.hellobank_ibm.Model.MovementModel;
-import com.example.hellobank_ibm.Service.IMovementService;
+import com.example.hellobank_ibm.Model.TransactionModel;
+import com.example.hellobank_ibm.Service.ITransactionService;
 
 @RestController
 public class TransactionController {
 
 	@Autowired
-	private IMovementService service;
+	private ITransactionService service;
 
-	@GetMapping("/movements")
-	public ArrayList<MovementModel> recuperarTodos() {
+	@GetMapping("/transaction")
+	public ArrayList<TransactionModel> recuperarTodos() {
 		return service.buscarTodos();
 	}
 
-	@GetMapping("/movements/{id}")
-	public ResponseEntity<MovementModel> buscarPeloId(@PathVariable Integer id) {
-		MovementModel res = service.buscarPeloId(id);
+	@GetMapping("/transaction/{id}")
+	public ResponseEntity<transactionModel> buscarPeloId(@PathVariable Integer id) {
+		TransactionModel res = service.buscarPeloId(id);
 		if (res != null) {
 			return ResponseEntity.ok(res);
 		}
 		return ResponseEntity.notFound().build();
 	}
 
-	@PostMapping("/movements")
-	public ResponseEntity<MovementModel> incluirNovo(@RequestBody MovementModel novo) {
-		MovementModel res = service.criarNovo(novo);
+	@PostMapping("/transaction")
+	public ResponseEntity<TransactionModel> incluirNovo(@RequestBody TransactionModel novo) {
+		TransactionModel res = service.criarNovo(novo);
 		if (res != null) {
 			return ResponseEntity.ok(res);
 		}
 		return ResponseEntity.badRequest().build();
 	}
 
-	@PutMapping("/movements")
-	public ResponseEntity<MovementModel> alterar(@RequestBody MovementModel dados) {
-		MovementModel res = service.atualizarDados(dados);
+	@PutMapping("/transaction")
+	public ResponseEntity<TransactionModel> alterar(@RequestBody TransactionModel dados) {
+		TransactionModel res = service.atualizarDados(dados);
 		if (res != null) {
 			return ResponseEntity.ok(res);
 		}
 		return ResponseEntity.badRequest().build();
 	}
 
-	@DeleteMapping("/movements/{id}")
-	public ResponseEntity<MovementModel> excluirMoviment(@PathVariable Integer id) {
-		service.excluirMovement(id);
+	@DeleteMapping("/transaction/{id}")
+	public ResponseEntity<TransactionModel> excluirMoviment(@PathVariable Integer id) {
+		service.excluirTransaction(id);
 		return ResponseEntity.ok(null);
-
 	}
-
 }
