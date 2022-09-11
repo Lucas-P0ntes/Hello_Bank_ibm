@@ -1,4 +1,4 @@
-package com.example.hellobank_ibm.model;
+package com.example.hellobank_ibm.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

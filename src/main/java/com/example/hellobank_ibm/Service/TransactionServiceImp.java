@@ -1,12 +1,12 @@
-package com.example.hellobank_ibm.service;
+package com.example.hellobank_ibm.Service;
 
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.hellobank_ibm.model.TransactionModel;
-import com.example.hellobank_ibm.repository.TransactionDAO;
+import com.example.hellobank_ibm.Model.TransactionModel;
+import com.example.hellobank_ibm.RepositorioDAO.TransactionDAO;
 
 @Service
 public class TransactionServiceImp implements ITransactionService {

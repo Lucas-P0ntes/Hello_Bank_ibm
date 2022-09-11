@@ -27,7 +27,7 @@ public class TransactionController {
 	}
 
 	@GetMapping("/transaction/{id}")
-	public ResponseEntity<transactionModel> buscarPeloId(@PathVariable Integer id) {
+	public ResponseEntity<TransactionModel> buscarPeloId(@PathVariable Integer id) {
 		TransactionModel res = service.buscarPeloId(id);
 		if (res != null) {
 			return ResponseEntity.ok(res);

@@ -27,7 +27,7 @@ public class CustomerAccountController {
     }
     @PutMapping ("/account")
     public CustomerAccountModel atualizar(@RequestBody CustomerAccountModel dados){
-        return service.atualizardados(dados)
+        return service.atualizardados(dados);
     }
     @PostMapping("/account")
     public CustomerAccountModel  criarNovo(@RequestBody CustomerAccountModel novo){
