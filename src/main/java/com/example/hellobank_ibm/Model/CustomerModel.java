@@ -2,7 +2,7 @@ package com.example.hellobank_ibm.Model;
 
 import javax.persistence.*;
 
-@Entity  //Indica que a class vai ser armazenada
+@Entity  //Indica que a class vai ser armazenada, identificando-a.
 @Table (name = "custumer")
 public class CustomerModel {
     @Column(name="id")
