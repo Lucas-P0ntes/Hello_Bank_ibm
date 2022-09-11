@@ -26,8 +26,10 @@ public class CustomerController {
         return service.atualizardados(dados);
     }
     @PostMapping("/customer")
-    public CustomerModel Recuperartodos(@RequestBody CustomerModel novo){
+    public CustomerModel criarNovo(@RequestBody CustomerModel novo){
+
         return service.criarnovo(novo);
+
     }
 
     @DeleteMapping("/customer/{id}")

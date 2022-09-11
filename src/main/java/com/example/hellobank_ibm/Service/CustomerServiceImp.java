@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.example.hellobank_ibm.RepositorioDAO.CustomerDAO;
 import  java.util.ArrayList;
 
+import com.example.hellobank_ibm.Service.CustomerServiceImp;
 @Service
 public class CustomerServiceImp  implements ICustomerService {
 
@@ -16,7 +17,9 @@ public class CustomerServiceImp  implements ICustomerService {
     public CustomerModel criarnovo(CustomerModel novo) {
 
         if(novo.getCpf() != null && novo.getEmail()!= null && novo.getNome_completo()!= null && novo.getEndereco()!= null){
-            return dao.save(novo);
+            CustomerModel sabe= dao.save(novo);
+
+            return sabe;
         }
         return null;
 
