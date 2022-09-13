@@ -44,18 +44,4 @@ public class TransactionController {
 		return ResponseEntity.badRequest().build();
 	}
 
-	@PutMapping("/transaction")
-	public ResponseEntity<TransactionModel> alterar(@RequestBody TransactionModel dados) {
-		TransactionModel res = service.atualizarDados(dados);
-		if (res != null) {
-			return ResponseEntity.ok(res);
-		}
-		return ResponseEntity.badRequest().build();
-	}
-
-	@DeleteMapping("/transaction/{id}")
-	public ResponseEntity<TransactionModel> excluirMoviment(@PathVariable Integer id) {
-		service.excluirTransaction(id);
-		return ResponseEntity.ok(null);
-	}
 }

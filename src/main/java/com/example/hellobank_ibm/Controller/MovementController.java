@@ -23,6 +23,7 @@ public class MovementController {
 
 	@GetMapping("/movements")
 	public ArrayList<MovementModel> recuperarTodos() {
+
 		return service.buscarTodos();
 	}
 
@@ -44,20 +45,5 @@ public class MovementController {
 		return ResponseEntity.badRequest().build();
 	}
 
-	@PutMapping("/movements")
-	public ResponseEntity<MovementModel> alterar(@RequestBody MovementModel dados) {
-		MovementModel res = service.atualizarDados(dados);
-		if (res != null) {
-			return ResponseEntity.ok(res);
-		}
-		return ResponseEntity.badRequest().build();
-	}
-
-	@DeleteMapping("/movements/{id}")
-	public ResponseEntity<MovementModel> excluirMoviment(@PathVariable Integer id) {
-		service.excluirMovement(id);
-		return ResponseEntity.ok(null);
-
-	}
 
 }

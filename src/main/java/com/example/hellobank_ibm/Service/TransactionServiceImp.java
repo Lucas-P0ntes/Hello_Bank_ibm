@@ -16,7 +16,7 @@ public class TransactionServiceImp implements ITransactionService {
 
 	@Override
 	public TransactionModel criarNovo(TransactionModel novo) {
-		if (novo.getId() != null && novo.getHora() != null && novo.getTipo() != null && novo.getValor() != null) {
+		if ( novo.getValor() != null) {
 			return dao.save(novo);
 		}
 		return null;
@@ -24,7 +24,7 @@ public class TransactionServiceImp implements ITransactionService {
 
 	@Override
 	public TransactionModel atualizarDados(TransactionModel dados) {
-		if (dados.getId() != null && dados.getHora() != null && dados.getTipo() != null && dados.getValor() != null) {
+		if (dados.getId() != null  && dados.getValor() != null) {
 			return dao.save(dados);
 		}
 		return null;

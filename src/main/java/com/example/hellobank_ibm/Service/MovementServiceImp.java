@@ -1,5 +1,6 @@
 package com.example.hellobank_ibm.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class MovementServiceImp implements IMovementService {
 
 	@Override
 	public MovementModel criarNovo(MovementModel novo) {
-		if (novo.getId() != null && novo.getHora() != null && novo.getTipo() != null && novo.getValor() != null) {
+		if (  novo.getType() != null && novo.getValor() != null) {
 			return dao.save(novo);
 		}
 		return null;
@@ -24,7 +25,7 @@ public class MovementServiceImp implements IMovementService {
 
 	@Override
 	public MovementModel atualizarDados(MovementModel dados) {
-		if (dados.getId() != null && dados.getHora() != null && dados.getTipo() != null && dados.getValor() != null) {
+		if (dados.getId() != null && dados.getType() != null && dados.getValor() != null) {
 			return dao.save(dados);
 		}
 		return null;

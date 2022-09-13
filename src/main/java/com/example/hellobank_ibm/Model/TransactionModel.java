@@ -1,5 +1,6 @@
 package com.example.hellobank_ibm.Model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -15,9 +16,37 @@ public class TransactionModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private Date hora;
+	private Timestamp data;
+
+	private Integer account_send;
+	private Integer account_receive;
+
+	public void setData(Timestamp data) {
+		this.data = data;
+	}
+
+	public Integer getAccount_send() {
+		return account_send;
+	}
+
+	public void setAccount_send(Integer account_send) {
+		this.account_send = account_send;
+	}
+
+	public Integer getAccount_receive() {
+		return account_receive;
+	}
+
+	public void setAccount_receive(Integer account_receive) {
+		this.account_receive = account_receive;
+	}
+
+	public Timestamp getData() {
+		return data;
+	}
+
 	private Integer valor;
-	private Integer tipo;
+	private Integer type;
 
 	public Integer getId() {
 		return id;
@@ -27,13 +56,7 @@ public class TransactionModel {
 		this.id = id;
 	}
 
-	public Date getHora() {
-		return hora;
-	}
 
-	public void setHora(Date hora) {
-		this.hora = hora;
-	}
 
 	public Integer getValor() {
 		return valor;
@@ -43,12 +66,11 @@ public class TransactionModel {
 		this.valor = valor;
 	}
 
-	public Integer getTipo() {
-		return tipo;
+	public Integer getType() {
+		return type;
 	}
 
-	public void setTipo(Integer tipo) {
-		this.tipo = tipo;
+	public void setType(Integer type) {
+		this.type = type;
 	}
-
 }
