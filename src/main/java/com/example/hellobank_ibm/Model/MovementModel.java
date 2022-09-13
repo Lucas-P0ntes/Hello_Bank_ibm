@@ -1,8 +1,9 @@
 package com.example.hellobank_ibm.Model;
 
+
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+
 
 
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ public class MovementModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
 	private Integer valor;
 
 	private Timestamp data;
@@ -44,7 +46,6 @@ public class MovementModel {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 
 
