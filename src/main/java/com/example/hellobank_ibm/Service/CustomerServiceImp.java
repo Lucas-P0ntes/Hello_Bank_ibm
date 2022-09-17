@@ -1,26 +1,28 @@
 package com.example.hellobank_ibm.Service;
 
+import com.example.hellobank_ibm.Model.CustomerAccountModel;
 import com.example.hellobank_ibm.Model.CustomerModel;
+import com.example.hellobank_ibm.RepositorioDAO.CustomerAccountDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.hellobank_ibm.RepositorioDAO.CustomerDAO;
 import  java.util.ArrayList;
-
-import com.example.hellobank_ibm.Service.CustomerServiceImp;
 @Service
 public class CustomerServiceImp  implements ICustomerService {
 
     @Autowired
     private CustomerDAO dao;
-
+    @Autowired
+    private ICustomerAccount service ;
     @Override
     public CustomerModel criarnovo(CustomerModel novo) {
 
         if(novo.getCpf() != null && novo.getEmail()!= null && novo.getNome_completo()!= null && novo.getEndereco()!= null){
-            CustomerModel sabe= dao.save(novo);
-
-            return sabe;
+            CustomerModel save= dao.save(novo);
+            this.service.criarnovo(novo.getId());
+            return save;
         }
+
         return null;
 
 
@@ -28,7 +30,7 @@ public class CustomerServiceImp  implements ICustomerService {
 
     @Override
     public CustomerModel atualizardados(CustomerModel dados) {
-        if( dados.getId() != null && dados.getCpf() != null&& dados.getEmail()!= null && dados.getNome_completo()!= null && dados.getEndereco()!= null){
+        if( dados.getId() != null && dados.getCpf() != null && dados.getEmail()!= null && dados.getNome_completo()!= null && dados.getEndereco()!= null){
             return dao.save(dados);
         }
         return null;

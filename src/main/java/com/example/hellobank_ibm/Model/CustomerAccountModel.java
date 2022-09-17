@@ -14,6 +14,19 @@ public class CustomerAccountModel {
     private Integer saldo;
     private Integer custumer;
 
+
+
+    public CustomerAccountModel(String agencia, String conta, Integer saldo, Integer custumer) {
+        this.agencia = agencia;
+        this.conta = conta;
+        this.saldo = saldo;
+        this.custumer = custumer;
+    }
+
+    public CustomerAccountModel() {
+
+    }
+
     public Integer getId() {
         return id;
     }

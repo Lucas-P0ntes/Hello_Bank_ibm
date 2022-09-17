@@ -2,6 +2,9 @@ package com.example.hellobank_ibm.Service;
 
 import java.util.ArrayList;
 
+import com.example.hellobank_ibm.Funcao.ConvertMoney;
+import com.example.hellobank_ibm.Model.CustomerAccountModel;
+import com.example.hellobank_ibm.Model.MovementModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,22 +16,31 @@ public class TransactionServiceImp implements ITransactionService {
 
 	@Autowired
 	private TransactionDAO dao;
+	@Autowired
+	private ICustomerAccount service;
 
+	ConvertMoney convertMoney =new ConvertMoney();
 	@Override
 	public TransactionModel criarNovo(TransactionModel novo) {
-		if ( novo.getValor() != null) {
-			return dao.save(novo);
+		if(novo.getType()==1) {
+			novo.setValor(convertMoney.reaisParaCent(novo.getValor()));
+			CustomerAccountModel res =this.service.pixSaldo(novo.getAccount_send(), novo.getAccount_receive(),novo.getValor());
+			if(res!= null) {
+				return dao.save(novo);
+			}
+			return null;
+		}else{
+			novo.setValor(convertMoney.reaisParaCent(novo.getValor()));
+			CustomerAccountModel res =this.service.pixSaldo(novo.getAccount_send(), novo.getAccount_receive(),novo.getValor());
+			if(res!= null) {
+				return dao.save(novo);
+			}
+			return null;
 		}
-		return null;
+
 	}
 
-	@Override
-	public TransactionModel atualizarDados(TransactionModel dados) {
-		if (dados.getId() != null  && dados.getValor() != null) {
-			return dao.save(dados);
-		}
-		return null;
-	}
+
 
 	@Override
 	public ArrayList<TransactionModel> buscarTodos() {
@@ -39,12 +51,10 @@ public class TransactionServiceImp implements ITransactionService {
 	@Override
 	public TransactionModel buscarPeloId(Integer id) {
 
-		return dao.findById(id).orElse(null);
+		TransactionModel res = dao.findById(id).orElse(null);
+		res.setValor(convertMoney.centParaReais(res.getValor()));
+		return res;
 	}
 
-	@Override
-	public TransactionModel excluirTransaction(Integer id) {
-		dao.deleteById(id);
-		return null;
-	}
+
 }

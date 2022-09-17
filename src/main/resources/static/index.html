@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+
+    <title>Hello Bank</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("https://img.freepik.com/free-vector/yellow-hexagonal-honeycomb-mesh-pattern-with-text-space_1017-26292.jpg?w=900&t=st=1663100777~exp=1663101377~hmac=1363066ce63fd88943c44a38d7a4fb144a72ecccd0a63bfe4da1c653ee11faa5");
+        background-size: cover;
+
+    }
+
+    .conteiner{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 1000px;
+        height: 400px;
+        margin-top: 5%;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 1px 1px 10px black;
+        border-radius:  10px;
+
+    }
+    .box-rotas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
+
+    }
+    .card{
+        padding: 5px;
+        margin: 5px;
+    }
+
+</style>
+
+<body>
+<div class="box">
+    <div class="conteiner">
+        <h1>API Hello Bank &#x1F41D</h1>
+
+        <h2>Rotas:</h2>
+        <div class="box-rotas">
+            <div class="card">
+                <h4>Customer: &#x1F33B</h4>
+                <hr/>
+                <h5>GET- /customer/{Id}" </h5>
+                <h5>GETALL- "/customer"  </h5>
+                <h5>PUT- "/customer" </h5>
+                <h5>PULL- "/customer"  </h5>
+                <h5>DELETE- "/customer/{Id}"  </h5>
+
+            </div>
+            <div class="card">
+                <h4>CustomerAccount: &#x1F33B</h4>
+                <hr/>
+                <h5>GET- "/account/{Id}" </h5>
+                <h5>GETALL- "/account"  </h5>
+                <h5>DELETE- "/account/{Id}"  </h5>
+
+            </div>
+            <div class="card">
+                <h4>Movement: &#x1F33B</h4>
+                <hr/>
+                <h5>GET- "/movement/{Id}" </h5>
+                <h5>GETALL- "/movement"  </h5>
+                <h5>PULL- "/movement"  </h5>
+
+
+            </div>
+            <div class="card">
+                <h4> Transaction: &#x1F33B</h4>
+                <hr/>
+                <h5>GET- "/transaction/{Id}" </h5>
+                <h5>GETALL- "/transaction"  </h5>
+                <h5>PULL- "/transaction"  </h5>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

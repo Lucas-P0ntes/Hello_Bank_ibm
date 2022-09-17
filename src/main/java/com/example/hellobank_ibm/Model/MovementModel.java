@@ -24,6 +24,8 @@ public class MovementModel {
 
 	private Timestamp data;
 
+	private Integer account_custumer;
+	private Integer type;
 	public Integer getAccount_custumer() {
 		return account_custumer;
 	}
@@ -32,12 +34,10 @@ public class MovementModel {
 		this.account_custumer = account_custumer;
 	}
 
-	private Integer account_custumer;
 	public Timestamp getData() {
 		return data;
 	}
 
-	private Integer type;
 
 	public Integer getId() {
 		return id;

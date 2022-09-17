@@ -1,5 +1,4 @@
 package com.example.hellobank_ibm.Controller;
-
 import com.example.hellobank_ibm.Model.CustomerModel;
 import com.example.hellobank_ibm.Service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,6 @@ public class CustomerController {
     }
     @PostMapping("/customer")
     public ResponseEntity <CustomerModel> criarNovo(@RequestBody CustomerModel novo){
-
         CustomerModel res= service.criarnovo(novo);
         if(res !=null){
             return ResponseEntity.ok(res);

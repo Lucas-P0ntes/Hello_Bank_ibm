@@ -8,11 +8,10 @@ public interface IMovementService {
 
 	public MovementModel criarNovo(MovementModel novo);
 
-	public MovementModel atualizarDados(MovementModel dados);
 
 	public ArrayList<MovementModel> buscarTodos();
 
 	public MovementModel buscarPeloId(Integer id);
 
-	public MovementModel excluirMovement(Integer id);
+
 }

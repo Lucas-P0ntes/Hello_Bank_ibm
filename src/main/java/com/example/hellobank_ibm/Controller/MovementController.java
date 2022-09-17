@@ -40,6 +40,7 @@ public class MovementController {
 	public ResponseEntity<MovementModel> incluirNovo(@RequestBody MovementModel novo) {
 		MovementModel res = service.criarNovo(novo);
 		if (res != null) {
+
 			return ResponseEntity.ok(res);
 		}
 		return ResponseEntity.badRequest().build();

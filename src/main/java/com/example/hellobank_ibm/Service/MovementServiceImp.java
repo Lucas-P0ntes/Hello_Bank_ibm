@@ -1,8 +1,9 @@
 package com.example.hellobank_ibm.Service;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import com.example.hellobank_ibm.Funcao.ConvertMoney;
+import com.example.hellobank_ibm.Model.CustomerAccountModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,38 +15,44 @@ public class MovementServiceImp implements IMovementService {
 
 	@Autowired
 	private MovementDAO dao;
+	@Autowired
+	private ICustomerAccount service;
 
+	ConvertMoney convertMoney =new ConvertMoney();
 	@Override
 	public MovementModel criarNovo(MovementModel novo) {
-		if (  novo.getType() != null && novo.getValor() != null) {
+
+		if(novo.getType()==1) {
+			novo.setValor(convertMoney.reaisParaCent(novo.getValor()));
+			CustomerAccountModel res =this.service.sacaSaldo(novo.getAccount_custumer(),novo.getValor());
+
+			if(res!= null) {
+				return dao.save(novo);
+			}
+			return null;
+		}else{
+			novo.setValor(convertMoney.reaisParaCent(novo.getValor()));
+			 this.service.depositaSaldo(novo.getAccount_custumer(),novo.getValor());
 			return dao.save(novo);
 		}
-		return null;
-	}
 
-	@Override
-	public MovementModel atualizarDados(MovementModel dados) {
-		if (dados.getId() != null && dados.getType() != null && dados.getValor() != null) {
-			return dao.save(dados);
-		}
-		return null;
 	}
 
 	@Override
 	public ArrayList<MovementModel> buscarTodos() {
 		ArrayList<MovementModel> all = (ArrayList<MovementModel>) dao.findAll();
+
 		return all;
 	}
 
 	@Override
 	public MovementModel buscarPeloId(Integer id) {
 
-		return dao.findById(id).orElse(null);
+		MovementModel res = dao.findById(id).orElse(null);
+		res.setValor(convertMoney.centParaReais(res.getValor()));
+
+		return res;
 	}
 
-	@Override
-	public MovementModel excluirMovement(Integer id) {
-		dao.deleteById(id);
-		return null;
-	}
+
 }

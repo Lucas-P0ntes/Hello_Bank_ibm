@@ -43,15 +43,5 @@ public class CustomerAccountController {
         }
         return ResponseEntity.badRequest().build();
     }
-    @PostMapping("/account")
-    public ResponseEntity<CustomerAccountModel>  criarNovo(@RequestBody CustomerAccountModel novo){
-        CustomerAccountModel res= service.criarnovo(novo);
-        if (res != null) {
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.badRequest().build();
-    }
-
-
 
 }
