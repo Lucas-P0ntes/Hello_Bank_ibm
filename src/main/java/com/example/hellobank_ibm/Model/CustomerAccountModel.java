@@ -3,7 +3,7 @@ package com.example.hellobank_ibm.Model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="custumeraccount")
+@Table(name="account")
 public class CustomerAccountModel {
     @Column(name="id")
     @Id
@@ -12,15 +12,15 @@ public class CustomerAccountModel {
     private String agencia;
     private String conta;
     private Integer saldo;
-    private Integer custumer;
+    private Integer customer;
 
 
 
-    public CustomerAccountModel(String agencia, String conta, Integer saldo, Integer custumer) {
+    public CustomerAccountModel(String agencia, String conta, Integer saldo, Integer customer) {
         this.agencia = agencia;
         this.conta = conta;
         this.saldo = saldo;
-        this.custumer = custumer;
+        this.customer = customer;
     }
 
     public CustomerAccountModel() {
@@ -60,10 +60,10 @@ public class CustomerAccountModel {
     }
 
     public Integer getCustumer() {
-        return custumer;
+        return customer;
     }
 
     public void setCustumer(Integer custumer) {
-        this.custumer = custumer;
+        this.customer = custumer;
     }
 }

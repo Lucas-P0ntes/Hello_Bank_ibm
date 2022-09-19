@@ -11,6 +11,7 @@ public interface ITransactionService {
 	public ArrayList<TransactionModel> buscarTodos();
 
 	public TransactionModel buscarPeloId(Integer id);
+	public ArrayList<TransactionModel>historicoTransactiont (Integer id);
 
 
 }

@@ -28,8 +28,6 @@
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
-        width: 1000px;
-        height: 400px;
         margin-top: 5%;
         background-color: rgb(255, 255, 255);
         box-shadow: 1px 1px 10px black;
@@ -38,15 +36,20 @@
     }
     .box-rotas{
         display: flex;
+        justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
-
-
 
     }
     .card{
         padding: 5px;
         margin: 5px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    h5{
+        font-size: 12px;
     }
 
 </style>
@@ -64,7 +67,7 @@
                 <h5>GET- /customer/{Id}" </h5>
                 <h5>GETALL- "/customer"  </h5>
                 <h5>PUT- "/customer" </h5>
-                <h5>PULL- "/customer"  </h5>
+                <h5>POST- "/customer"  </h5>
                 <h5>DELETE- "/customer/{Id}"  </h5>
 
             </div>
@@ -79,9 +82,10 @@
             <div class="card">
                 <h4>Movement: &#x1F33B</h4>
                 <hr/>
-                <h5>GET- "/movement/{Id}" </h5>
-                <h5>GETALL- "/movement"  </h5>
-                <h5>PULL- "/movement"  </h5>
+                <h5>GET- "/movements/{Id}" </h5>
+                <h5>GETALL- "/movements"  </h5>
+                <h5>POST- "/movements"  </h5>
+                <h5>GET-"/movements/customer/{Id}"</h5>
 
 
             </div>
@@ -90,10 +94,32 @@
                 <hr/>
                 <h5>GET- "/transaction/{Id}" </h5>
                 <h5>GETALL- "/transaction"  </h5>
-                <h5>PULL- "/transaction"  </h5>
+                <h5>POST- "/transaction"  </h5>
+                <h5>GET-"/transaction/customer/{Id}"</h5>
 
 
             </div>
+            <div class="card">
+                <h4> TypeTransaction: &#x1F33B</h4>
+                <hr/>
+                <h5>GET- "/TypeTransaction/{Id}" </h5>
+                <h5>GETALL- "/TypeTransaction"  </h5>
+                <h5>POST- "/TypeTransaction"  </h5>
+                <h5>PUT-"/TypeTransaction"</h5>
+
+
+            </div>
+            <div class="card">
+                <h4> TypeMovement: &#x1F33B</h4>
+                <hr/>
+                <h5>GET- "/TypeMovement/{Id}" </h5>
+                <h5>GETALL- "/TypeMovement"  </h5>
+                <h5>POST- "/TypeMovement"  </h5>
+                <h5>PUT-"/TypeMovement"</h5>
+
+
+            </div>
+
         </div>
     </div>
 </div>

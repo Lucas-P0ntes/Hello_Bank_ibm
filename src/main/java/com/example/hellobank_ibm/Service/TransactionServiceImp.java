@@ -52,9 +52,23 @@ public class TransactionServiceImp implements ITransactionService {
 	public TransactionModel buscarPeloId(Integer id) {
 
 		TransactionModel res = dao.findById(id).orElse(null);
-		res.setValor(convertMoney.centParaReais(res.getValor()));
-		return res;
+		if(res!=null){
+			res.setValor(convertMoney.centParaReais(res.getValor()));
+			return res;
+		}
+		return null;
+
 	}
+
+	@Override
+	public ArrayList<TransactionModel> historicoTransactiont(Integer id) {
+		ArrayList<TransactionModel> all =  dao.historicoTransactiont(id);
+
+		return all;
+
+	}
+
+
 
 
 }

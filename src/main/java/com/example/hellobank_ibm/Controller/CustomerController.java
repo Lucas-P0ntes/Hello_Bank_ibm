@@ -46,10 +46,9 @@ public class CustomerController {
     @DeleteMapping("/customer/{id}")
     public ResponseEntity <CustomerModel> apagarConta(@PathVariable Integer id ){
         CustomerModel res = service.excluircliente(id);
-        if(res !=null){
-            return ResponseEntity.ok(res);
-        }
-        return ResponseEntity.notFound().build();
+
+            return null;
+
     }
 
 

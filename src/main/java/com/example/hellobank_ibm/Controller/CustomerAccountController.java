@@ -15,10 +15,14 @@ public class CustomerAccountController {
     private ICustomerAccount service;
 
     @GetMapping("/account")
-    public ArrayList<CustomerAccountModel>Recuperartodos(){
-        return service.buscartodos();
-
+    public ArrayList<CustomerAccountModel> Recuperartodos(){
+       var res = service.buscartodos();
+        if (res != null) {
+            return res;
+        }
+        return null;
     }
+
     @GetMapping("/account/{id}")
     public ResponseEntity<CustomerAccountModel> buscarPeloid(@PathVariable Integer id){
         CustomerAccountModel res = service.buscarpeloid(id);

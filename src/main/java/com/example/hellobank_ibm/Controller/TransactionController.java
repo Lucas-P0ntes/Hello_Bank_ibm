@@ -2,6 +2,7 @@ package com.example.hellobank_ibm.Controller;
 
 import java.util.ArrayList;
 
+import com.example.hellobank_ibm.Model.MovementModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,6 +43,11 @@ public class TransactionController {
 			return ResponseEntity.ok(res);
 		}
 		return ResponseEntity.badRequest().build();
+	}
+	@GetMapping("/transaction/customer/{id}")
+	public ArrayList<TransactionModel> Todos(@PathVariable Integer id) {
+		var list 	=service.historicoTransactiont(id);
+		return list;
 	}
 
 }

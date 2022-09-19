@@ -12,6 +12,7 @@ public interface IMovementService {
 	public ArrayList<MovementModel> buscarTodos();
 
 	public MovementModel buscarPeloId(Integer id);
+	public ArrayList<MovementModel> buscarPelocustomer(Integer id);
 
 
 }

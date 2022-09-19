@@ -85,7 +85,12 @@ public class CustomerAccountImpl implements ICustomerAccount{
     @Override
     public CustomerAccountModel buscarpeloid(Integer id) {
         CustomerAccountModel res = dao.findById(id).orElse(null);
-        res.setSaldo(convertMoney.centParaReais(res.getSaldo()));
+        if(res!=null){
+            res.setSaldo(convertMoney.centParaReais(res.getSaldo()));
+            return res;
+
+        }
+
         return res;
     }
 

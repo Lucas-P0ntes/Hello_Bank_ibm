@@ -5,16 +5,20 @@ import java.util.ArrayList;
 import com.example.hellobank_ibm.Funcao.ConvertMoney;
 import com.example.hellobank_ibm.Model.CustomerAccountModel;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.example.hellobank_ibm.Model.MovementModel;
 import com.example.hellobank_ibm.RepositorioDAO.MovementDAO;
 
 @Service
+
 public class MovementServiceImp implements IMovementService {
 
 	@Autowired
 	private MovementDAO dao;
+
+
 	@Autowired
 	private ICustomerAccount service;
 
@@ -49,9 +53,21 @@ public class MovementServiceImp implements IMovementService {
 	public MovementModel buscarPeloId(Integer id) {
 
 		MovementModel res = dao.findById(id).orElse(null);
-		res.setValor(convertMoney.centParaReais(res.getValor()));
+		if (res != null) {
+			res.setValor(convertMoney.centParaReais(res.getValor()));
+			return res;
 
-		return res;
+		}
+
+		return null;
+	}
+
+	@Override
+	public ArrayList<MovementModel> buscarPelocustomer(Integer id) {
+		ArrayList<MovementModel> all =  dao.historicoMovement(id);
+
+		return all;
+
 	}
 
 

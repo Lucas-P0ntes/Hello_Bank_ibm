@@ -5,12 +5,7 @@ import java.sql.Timestamp;
 
 
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "movement")
@@ -24,14 +19,16 @@ public class MovementModel {
 
 	private Timestamp data;
 
-	private Integer account_custumer;
+	private Integer account;
 	private Integer type;
+
+
 	public Integer getAccount_custumer() {
-		return account_custumer;
+		return account;
 	}
 
-	public void setAccount_custumer(Integer account_custumer) {
-		this.account_custumer = account_custumer;
+	public void setAccount_custumer(Integer account) {
+		this.account = account;
 	}
 
 	public Timestamp getData() {
