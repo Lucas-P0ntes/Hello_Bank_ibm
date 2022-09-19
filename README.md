@@ -9,7 +9,7 @@
 
 O desafio final consiste em desenvolver API REST resolvendo a funcionalidade de transações para um site banco baseado na arquitetura de microsserviços.
 
-![swagger page](imagens/swagger1.jpeg)
+![swagger page](imagens/swagger1.png)
 
 
 #### 🚀 Começando
