@@ -75,7 +75,7 @@ Acesso aos Endpoints via Swagger.
 ![typetransactioncontroller swagger](imagens/type-transaction-controller.png)
 
 
-#### 💻 Integrantes do grupo ______
+#### 💻 Integrantes do grupo J.A.R.V.I.S
 
 - Guilherme Barros
 - Jokebede Coimbra
