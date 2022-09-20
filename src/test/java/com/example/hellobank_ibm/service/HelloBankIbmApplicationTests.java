@@ -1,4 +1,4 @@
-package com.example.hellobank_ibm;
+package com.example.hellobank_ibm.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
