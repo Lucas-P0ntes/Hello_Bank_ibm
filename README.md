@@ -77,10 +77,10 @@ Acesso aos Endpoints via Swagger.
 
 #### 💻 Integrantes do grupo J.A.R.V.I.S
 
-- Guilherme Barros
+- [Guilherme Barros](https://github.com/guilherme77)
 - [Jokebede Coimbra](https://github.com/Jokebede-Coimbra)
 - [Lucas Lopes](https://github.com/Lucas-P0ntes)
-- Tobias Gustavo
+- [Tobias Gustavo](https://github.com/TobiasGustavo)
 
 
 #### 🎁 Expressões de gratidão
