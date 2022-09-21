@@ -79,7 +79,7 @@ Acesso aos Endpoints via Swagger.
 
 - Guilherme Barros
 - [Jokebede Coimbra](https://github.com/Jokebede-Coimbra)
-- Lucas Lopes
+- [Lucas Lopes](https://github.com/Lucas-P0ntes)
 - Tobias Gustavo
 
 
