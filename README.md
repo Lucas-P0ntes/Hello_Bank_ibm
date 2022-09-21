@@ -78,7 +78,7 @@ Acesso aos Endpoints via Swagger.
 #### 💻 Integrantes do grupo J.A.R.V.I.S
 
 - Guilherme Barros
-- Jokebede Coimbra
+- [Jokebede Coimbra](https://github.com/Jokebede-Coimbra)
 - Lucas Lopes
 - Tobias Gustavo
 
