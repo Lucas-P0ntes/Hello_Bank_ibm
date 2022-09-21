@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-        "Name": "gsb7/hello-bank-ibm",
+        "Name": "gsb7/hellobank5",
         "Update": "true"
     },
     "Ports": [
