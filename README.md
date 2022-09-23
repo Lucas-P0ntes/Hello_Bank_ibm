@@ -44,7 +44,7 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 
 4. Acesse o Swagger
 
-   http://localhost:8070/swagger-ui.html
+   http://localhost:8082/swagger-ui.html
 
 #### 🎬 Execução
 
